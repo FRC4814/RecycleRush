@@ -1,3 +1,9 @@
+# Build Files and Directories
+bin/
+build/
+dist/
+*.class
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
