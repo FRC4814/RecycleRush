@@ -22,9 +22,13 @@ public class Chassis extends Subsystem {
         // Set the default command for a subsystem here.
         setDefaultCommand(new HaloDrive());
     }
-    public void drive(double leftPower, double rightPower){
-    	myRobot.tankDrive(leftPower, rightPower);
-    }
+    //public void drive(double leftPower, double rightPower){
+    	//myRobot.tankDrive(leftPower, rightPower);    	
+    //}
+    
+    public void drive(double ForwardPower, double TurnPower){ //HALO DRIVE
+ 	   myRobot.tankDrive(ForwardPower, TurnPower);
+ 	   }
     /**
      * 
      * Drives the robot forward for an amount of time given in seconds 
