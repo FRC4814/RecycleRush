@@ -23,25 +23,24 @@ public class HaloDrive extends Command {
     protected void execute() {
     	double forwardPower = Robot.oi.leftStick.getDeadY();
     	double turnMod = Robot.oi.rightStick.getDeadX();
-    	double leftPower= forwardPower;
-    	double rightPower= forwardPower; 
+    	double leftPower = forwardPower;
+    	double rightPower = forwardPower; 
     	
-    	if (turnMod > 0){    		//reduce power of opposite side by the turnMod
+    	if (turnMod > 0) {    		//reduce power of opposite side by the turnMod
     		rightPower *= 1 - Math.abs(turnMod);
     	}
-    	if (turnMod < 0){ 
+    	if (turnMod < 0) { 
     		leftPower *= 1 - Math.abs(turnMod); 
     	}
-    	if (forwardPower == 0){  //if forward = 0, then zero point turn 		 
+    	if (forwardPower == 0) {  //if forward = 0, then zero point turn 		 
 			leftPower = turnMod;
 			rightPower = -turnMod;    		   		
     	}
-    	if (forwardPower < 0){ //switches directions when moving backwards
+    	if (forwardPower < 0) { //switches directions when moving backwards
     		leftPower *= -1;
     		rightPower *= -1;
     	}
     	Robot.chassis.drive(leftPower,rightPower);
-    	
     }
 
     // Make this return true when this Command no longer needs to run execute()

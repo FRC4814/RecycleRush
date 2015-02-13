@@ -6,6 +6,8 @@ import edu.wpi.first.wpilibj.command.Command;
 
 /**
  * 
+ * Drives the robot forward for a distance, given in TODO Determine the ratio of encoder  to distance  
+ * 
  */
 public class DriveFor extends Command {
 	private double leftPower;

@@ -10,6 +10,8 @@ public class RobotMap {
     // following variables to use with your drivetrain subsystem.
     public static final int[] LEFT_MOTORS = {1,3}; // Front Left, Back Left
     public static final int[] RIGHT_MOTORS = {4,6}; // Front Right, Back Right
+    public static final int ELEVATOR_MOTOR = 2; // Motor set to elevator winch
+    public static final int ARM_MOTOR = 5; // Motor set to arm winch
     public static final int[] ENCODER_LEFT = {0, 1};
     public static final int[] ENCODER_RIGHT = {2, 3};
     public static final int WINCH = 1;

@@ -3,6 +3,7 @@ package org.usfirst.frc.team4814.robot;
 
 import org.usfirst.frc.team4814.robot.commands.ElevatorDown;
 import org.usfirst.frc.team4814.robot.commands.ElevatorUp;
+import org.usfirst.frc.team4814.robot.subsystems.Arm;
 import org.usfirst.frc.team4814.robot.subsystems.Chassis;
 import org.usfirst.frc.team4814.robot.subsystems.Elevator;
 
@@ -22,6 +23,7 @@ public class Robot extends IterativeRobot {
 
 	public static final Chassis chassis = new Chassis();
 	public static final Elevator elevator = new Elevator();
+	public static final Arm arm = new Arm();
 	public static OI oi;
 
     Command autonomousCommand;
@@ -33,6 +35,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
     	oi = new OI();
         // instantiate the command used for the autonomous period
+    	// If you see this part of the code and know a Kyle Inzunza, tell him to get Motorvated --Steven
     	oi.rightButton3.whileHeld(new ElevatorUp());
     	oi.rightButton2.whileHeld(new ElevatorDown());
     }
