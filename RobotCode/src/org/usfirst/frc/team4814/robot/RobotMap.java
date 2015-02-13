@@ -8,7 +8,7 @@ package org.usfirst.frc.team4814.robot;
 public class RobotMap {
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
-    public static final int[] LEFT_MOTORS = {2,3}; // Front Left, Back Left
+    public static final int[] LEFT_MOTORS = {1,3}; // Front Left, Back Left
     public static final int[] RIGHT_MOTORS = {4,6}; // Front Right, Back Right
     public static final int[] ENCODER_LEFT = {0, 1};
     public static final int[] ENCODER_RIGHT = {2, 3};
