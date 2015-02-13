@@ -2,7 +2,6 @@ package org.usfirst.frc.team4814.robot;
 
 import org.usfirst.frc.team4814.robot.subsystems.Attack3Joystick;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 	
 /**
