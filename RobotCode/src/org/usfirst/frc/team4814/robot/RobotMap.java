@@ -10,6 +10,8 @@ public class RobotMap {
     // following variables to use with your drivetrain subsystem.
     public static final int[] LEFT_MOTORS = {2,3}; // Front Left, Back Left
     public static final int[] RIGHT_MOTORS = {4,6}; // Front Right, Back Right
+    public static final int[] ENCODER_LEFT = {0, 1};
+    public static final int[] ENCODER_RIGHT = {2, 3};
     public static final int WINCH = 1;
     // If you are using multiple modules, make sure to define both the port
     // number and the module. For example you with a rangefinder:
