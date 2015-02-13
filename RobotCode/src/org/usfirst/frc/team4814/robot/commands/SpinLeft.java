@@ -5,19 +5,14 @@ import org.usfirst.frc.team4814.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- * 
+ *
  */
-public class DriveFor extends Command {
-	private double leftPower;
-	private double rightPower;
-	private double distance;
-	
-    public DriveFor(double leftPower, double rightPower, double distance) {
+public class SpinLeft extends Command {
+
+    public SpinLeft(double seconds) {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.chassis);
-        this.leftPower = leftPower;
-        this.rightPower = rightPower;
-        this.distance = distance;
+        setTimeout(seconds);
     }
 
     // Called just before this Command runs the first time
@@ -28,15 +23,12 @@ public class DriveFor extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.chassis.drive(leftPower, rightPower);
+    	Robot.chassis.drive(0.5, -0.5);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	if (Robot.chassis.getEncoderLeft().getDistance() < distance && Robot.chassis.getEncoderRight().getDistance() < distance) {
-    		return true;
-		}
-        return false;
+        return isTimedOut();
     }
 
     // Called once after isFinished returns true

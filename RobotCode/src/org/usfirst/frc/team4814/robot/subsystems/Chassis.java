@@ -17,8 +17,8 @@ public class Chassis extends Subsystem {
 	private Encoder encoderRight;
     public Chassis(){    	
     	myRobot = new RobotDrive(RobotMap.LEFT_MOTORS[0],RobotMap.LEFT_MOTORS[1],RobotMap.RIGHT_MOTORS[0],RobotMap.RIGHT_MOTORS[1]); //front left back left front right back right
-    	setEncoderLeft(new Encoder(RobotMap.ENCODER_LEFT[0], RobotMap.ENCODER_LEFT[1], true, EncodingType.k4X));
-    	setEncoderRight(new Encoder(RobotMap.ENCODER_RIGHT[0], RobotMap.ENCODER_RIGHT[1], true, EncodingType.k4X));
+    	encoderLeft = new Encoder(RobotMap.ENCODER_LEFT[0], RobotMap.ENCODER_LEFT[1], true, EncodingType.k4X);
+    	encoderRight = new Encoder(RobotMap.ENCODER_RIGHT[0], RobotMap.ENCODER_RIGHT[1], true, EncodingType.k4X);
     }
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -51,19 +51,6 @@ public class Chassis extends Subsystem {
 	public Encoder getEncoderRight() {
 		return encoderRight;
 	}
-
-    /*public void turnLeft() {
-    	this.driveFor(0.5, 0.1, 2);
-    }
-    public void turnRight() {
-    	this.driveFor(0.1, 0.5, 2);
-    }
-    public void spinLeft() {
-    	this.driveFor(0.5, -0.5, 2);
-    }
-    public void spinRight() {
-    	this.driveFor(-0.5, 0.5, 2);
-    }*/
 }
 
 
