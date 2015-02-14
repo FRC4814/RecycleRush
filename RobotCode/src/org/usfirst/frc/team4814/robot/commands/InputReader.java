@@ -13,15 +13,14 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class InputReader extends Command {
-
-	Scanner scanner;
-	String temp;
 	
 	private Vector<String> dataStack;
+	private String temp;
 	
     public InputReader() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+    	Scanner scanner = null;
     	try {
 			scanner = new Scanner(new FileInputStream("data.txt"));
 		} catch (FileNotFoundException e) {
@@ -47,10 +46,12 @@ public class InputReader extends Command {
     protected void execute() {
     	temp = dataStack.remove(0);
     	if(temp.isEmpty() == false){
-    		Robot.chassis.setForwardPower(Double.parseDouble(temp.substring(0, temp.indexOf(','))));
-	    	temp = temp.substring(temp.indexOf(','));
-	    	Robot.chassis.setTurnPower(Double.parseDouble(temp.substring(0, temp.indexOf(','))));
-	    	temp = temp.substring(temp.indexOf(','));
+    		String[] data = temp.split(",");
+    		double leftPower = Double.parseDouble(data[0]);
+	    	double rightPower = Double.parseDouble(data[1]);
+	    	Robot.chassis.drive(leftPower, rightPower);
+	    	Double.parseDouble(data[2]);
+	    	Double.parseDouble(data[3]);
 	    	Robot.arm.setArmPower(Double.parseDouble(temp.substring(0, temp.indexOf(','))));
 	    	temp = temp.substring(temp.indexOf(','));
 	    	Robot.elevator.setElevatorPower(Double.parseDouble(temp.substring(0, temp.indexOf(','))));

@@ -1,8 +1,8 @@
 package org.usfirst.frc.team4814.robot.commands;
 
-import java.io.*;
-
-import edu.wpi.first.wpilibj.command.Command;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 
 /**
  *

@@ -24,11 +24,11 @@ public class Interpreter extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		double forwardPower = Robot.chassis.getForwardPower();
-		double turnPower = Robot.chassis.getTurnPower();
+		double leftPower = Robot.chassis.getLeftPower();
+		double rightPower = Robot.chassis.getRightPower();
 		double armPower = Robot.arm.getArmPower();
 		double elevatorPower = Robot.elevator.getElevatorPower();
-		outputWriter.writeText(forwardPower, turnPower, armPower, elevatorPower);
+		outputWriter.writeText(leftPower, rightPower, armPower, elevatorPower);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

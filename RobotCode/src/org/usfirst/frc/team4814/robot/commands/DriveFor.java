@@ -23,6 +23,7 @@ public class DriveFor extends Command {
     }
 
     // Called just before this Command runs the first time
+    // If you know Kyle Inzunza, tell him to get motorvated
     protected void initialize() {
     	Robot.chassis.getEncoderLeft().reset();
     	Robot.chassis.getEncoderRight().reset();

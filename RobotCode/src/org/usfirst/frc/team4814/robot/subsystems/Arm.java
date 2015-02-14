@@ -48,21 +48,6 @@ public class Arm extends Subsystem {
     		return true;
     	return false;
     }
-    
-    public void armUp() {
-    	armPower = 0.5;
-    	armMotor.set(0.5);
-    }
-    
-    public void armDown() {
-    	armPower = -0.5;
-    	armMotor.set(-0.5);
-    }
-    
-    public void armStop() {
-    	armPower = 0;
-    	armMotor.set(0);
-    }
 
 	/**
 	 * @return the armPower
@@ -76,6 +61,7 @@ public class Arm extends Subsystem {
 	 */
 	public void setArmPower(double armPower) {
 		this.armPower = armPower;
+		armMotor.set(armPower);
 	}
 }
 
