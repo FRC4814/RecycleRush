@@ -15,13 +15,13 @@ public class OutputWriter {
 
 	}
 
-	public void writeText(double forwardPower, double turnPower,
+	public void writeText(double forwardPower, double turnPower, //writes to variable to store motions 
 			double armPower, double elevatorPower) {
 		data.concat(forwardPower + "," + turnPower + "," + armPower + ","
 				+ elevatorPower + "\n");
 	}
 
-	public void save() {
+	public void save() { //writes to text file
 		FileOutputStream fileHandle2 = null; // Location of the output file
 		PrintWriter writer; // Writer for the text
 		String fileName = "info.txt"; // File location name

@@ -23,7 +23,7 @@ public class Interpreter extends Command {
 	}
 
 	// Called repeatedly when this Command is scheduled to run
-	protected void execute() {
+	protected void execute() { //gets values of motions and sends to writer
 		double leftPower = Robot.chassis.getLeftPower();
 		double rightPower = Robot.chassis.getRightPower();
 		double armPower = Robot.arm.getArmPower();
