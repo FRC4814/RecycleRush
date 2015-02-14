@@ -9,15 +9,15 @@ import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- *
+ * The overall subsystem for controlling
  */
 public class Arm extends Subsystem {
-
 	private DigitalInput armLowLimitSwitch;
 	private DigitalInput armHighLimitSwitch;
 	private SpeedController armMotor;
 	private Counter counterLow;
 	private Counter counterHigh;
+	private double armPower;
 	
 	// Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -50,15 +50,32 @@ public class Arm extends Subsystem {
     }
     
     public void armUp() {
+    	armPower = 0.5;
     	armMotor.set(0.5);
     }
     
     public void armDown() {
+    	armPower = -0.5;
     	armMotor.set(-0.5);
     }
     
     public void armStop() {
+    	armPower = 0;
     	armMotor.set(0);
     }
+
+	/**
+	 * @return the armPower
+	 */
+	public double getArmPower() {
+		return armPower;
+	}
+
+	/**
+	 * @param armPower the armPower to set
+	 */
+	public void setArmPower(double armPower) {
+		this.armPower = armPower;
+	}
 }
 

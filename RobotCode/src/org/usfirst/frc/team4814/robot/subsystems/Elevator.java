@@ -16,6 +16,7 @@ public class Elevator extends Subsystem {
 	private DigitalInput elevatorHighLimitSwitch;
 	private Counter counterLow;
 	private Counter counterHigh;
+	private double elevatorPower;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	public Elevator() {
@@ -60,6 +61,20 @@ public class Elevator extends Subsystem {
 	 */
 	public DigitalInput getElevatorHighLimitSwitch() {
 		return elevatorHighLimitSwitch;
+	}
+
+	/**
+	 * @return the elevatorPower
+	 */
+	public double getElevatorPower() {
+		return elevatorPower;
+	}
+
+	/**
+	 * @param elevatorPower the elevatorPower to set
+	 */
+	public void setElevatorPower(double elevatorPower) {
+		this.elevatorPower = elevatorPower;
 	}
 
 	/**

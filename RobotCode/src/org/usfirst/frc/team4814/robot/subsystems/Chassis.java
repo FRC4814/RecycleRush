@@ -15,6 +15,8 @@ public class Chassis extends Subsystem {
 	private RobotDrive myRobot;
 	private Encoder encoderLeft;
 	private Encoder encoderRight;
+	private double forwardPower;
+	private double turnPower;
     public Chassis(){    	
     	myRobot = new RobotDrive(RobotMap.LEFT_MOTORS[0],RobotMap.LEFT_MOTORS[1],RobotMap.RIGHT_MOTORS[0],RobotMap.RIGHT_MOTORS[1]); //front left back left front right back right
     	encoderLeft = new Encoder(RobotMap.ENCODER_LEFT[0], RobotMap.ENCODER_LEFT[1], true, EncodingType.k4X);
@@ -31,9 +33,11 @@ public class Chassis extends Subsystem {
     //public void drive(double leftPower, double rightPower){
     	//myRobot.tankDrive(leftPower, rightPower);    	
     //}
-    
-    public void drive(double ForwardPower, double TurnPower){ //HALO DRIVE
- 	   myRobot.tankDrive(ForwardPower, TurnPower);
+
+	public void drive(double ForwardPower, double TurnPower){ //HALO DRIVE
+    	this.forwardPower = ForwardPower;	// Comment out during normal run time
+    	this.turnPower = TurnPower;			// Comment out during normal run time
+ 	   	myRobot.tankDrive(ForwardPower, TurnPower);
  	}
 
 	public Encoder getEncoderLeft() {
@@ -45,6 +49,34 @@ public class Chassis extends Subsystem {
 	 */
 	public Encoder getEncoderRight() {
 		return encoderRight;
+	}
+
+	/**
+	 * @return the forwardPower
+	 */
+	public double getForwardPower() {
+		return forwardPower;
+	}
+
+	/**
+	 * @param forwardPower the forwardPower to set
+	 */
+	public void setForwardPower(double forwardPower) {
+		this.forwardPower = forwardPower;
+	}
+
+	/**
+	 * @return the turnPower
+	 */
+	public double getTurnPower() {
+		return turnPower;
+	}
+
+	/**
+	 * @param turnPower the turnPower to set
+	 */
+	public void setTurnPower(double turnPower) {
+		this.turnPower = turnPower;
 	}
 }
 
