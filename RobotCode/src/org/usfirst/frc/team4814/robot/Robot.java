@@ -39,8 +39,8 @@ public class Robot extends IterativeRobot {
 	 */
 	public void robotInit() {
 		autoChooser = new SendableChooser();
-		autoChooser.addDefault("doNothing", new doNothing());
-		autoChooser.addDefault("autonomousCode", new autonomousCode());
+		//autoChooser.addDefault("doNothing", new doNothing());
+		//autoChooser.addDefault("autonomousCode", new autonomousCode());
 		chassis = new Chassis();
 		//arm = new Arm();
 		elevator = new Elevator();
