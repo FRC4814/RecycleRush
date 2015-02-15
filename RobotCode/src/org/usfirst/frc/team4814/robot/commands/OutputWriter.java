@@ -15,8 +15,9 @@ public class OutputWriter {
 
 	}
 
-	public void writeText(double forwardPower, double turnPower, //writes to variable to store motions 
+	public void writeText(double forwardPower, double turnPower, 
 			double armPower, double elevatorPower) {
+		//writes to variable to text file to store motions 
 		data.concat(forwardPower + "," + turnPower + "," + armPower + ","
 				+ elevatorPower + "\n");
 	}

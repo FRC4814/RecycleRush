@@ -1,17 +1,20 @@
 package org.usfirst.frc.team4814.robot;
 
+import org.usfirst.frc.team4814.robot.autocommands.AutoTest;
+import org.usfirst.frc.team4814.robot.autocommands.DriveFor;
 import org.usfirst.frc.team4814.robot.commands.ElevatorDown;
 import org.usfirst.frc.team4814.robot.commands.ElevatorUp;
-import org.usfirst.frc.team4814.robot.commands.InputReader;
-import org.usfirst.frc.team4814.robot.commands.Interpreter;
 import org.usfirst.frc.team4814.robot.subsystems.Arm;
 import org.usfirst.frc.team4814.robot.subsystems.Chassis;
 import org.usfirst.frc.team4814.robot.subsystems.Elevator;
+import org.usfirst.frc.team4814.robot.subsystems.autonomousCode;
+import org.usfirst.frc.team4814.robot.subsystems.doNothing;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -22,26 +25,33 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class Robot extends IterativeRobot {
 
-	public static final Chassis chassis = new Chassis();
-	public static final Elevator elevator = new Elevator();
-	public static final Arm arm = new Arm();
+	public static Chassis chassis ;
+	public static Elevator elevator; 
+	public static DriveFor DriveFor;
+	public static Arm arm; 
 	public static OI oi;
 
 	Command autonomousCommand;
-
+		SendableChooser autoChooser;
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
 	 */
 	public void robotInit() {
+		autoChooser = new SendableChooser();
+		autoChooser.addDefault("doNothing", new doNothing());
+		autoChooser.addDefault("autonomousCode", new autonomousCode());
+		chassis = new Chassis();
+		//arm = new Arm();
+		elevator = new Elevator();
 		oi = new OI();
 		// instantiate the command used for the autonomous period
 		// If you see this part of the code and know a Kyle Inzunza, tell him to
 		// get Motorvated --Steven
 		oi.rightButton3.whileHeld(new ElevatorUp());
 		oi.rightButton2.whileHeld(new ElevatorDown());
-		oi.rightButton4.whenPressed(new Interpreter());
-		oi.rightButton5.whenPressed(new InputReader());
+		//oi.rightButton4.whenPressed(new Interpreter());
+		//oi.rightButton5.whenPressed(new InputReader());
 	}
 
 	public void disabledPeriodic() {
@@ -50,8 +60,9 @@ public class Robot extends IterativeRobot {
 
 	public void autonomousInit() {
 		// schedule the autonomous command (example)
-		if (autonomousCommand != null)
-			autonomousCommand.start();
+		//autonomousComand = (Command) autonomous;
+		autonomousCommand = new AutoTest();
+		if (autonomousCommand != null) autonomousCommand.start();
 	}
 
 	/**
@@ -68,7 +79,7 @@ public class Robot extends IterativeRobot {
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
 		if (autonomousCommand != null)
-			autonomousCommand.cancel();
+			autonomousCommand.start();
 	}
 
 	/**
