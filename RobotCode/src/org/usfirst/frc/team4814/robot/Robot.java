@@ -7,8 +7,8 @@ import org.usfirst.frc.team4814.robot.commands.ElevatorUp;
 import org.usfirst.frc.team4814.robot.subsystems.Arm;
 import org.usfirst.frc.team4814.robot.subsystems.Chassis;
 import org.usfirst.frc.team4814.robot.subsystems.Elevator;
-import org.usfirst.frc.team4814.robot.subsystems.autonomousCode;
-import org.usfirst.frc.team4814.robot.subsystems.doNothing;
+import org.usfirst.frc.team4814.robot.subsystems.AutonomousCode;
+import org.usfirst.frc.team4814.robot.subsystems.DoNothing;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
