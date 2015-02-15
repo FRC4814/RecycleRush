@@ -9,6 +9,11 @@ import org.usfirst.frc.team4814.robot.subsystems.AutonomousCode;
 import org.usfirst.frc.team4814.robot.subsystems.Chassis;
 import org.usfirst.frc.team4814.robot.subsystems.DoNothing;
 import org.usfirst.frc.team4814.robot.subsystems.Elevator;
+<<<<<<< HEAD
+=======
+import org.usfirst.frc.team4814.robot.subsystems.AutonomousCode;
+import org.usfirst.frc.team4814.robot.subsystems.DoNothing;
+>>>>>>> origin/master
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -39,6 +44,7 @@ public class Robot extends IterativeRobot {
 	 * used for any initialization code.
 	 */
 	public void robotInit() {
+<<<<<<< HEAD
 		autoChooser = new SendableChooser();	// Initializing autoChooser
 		autoChooser.addDefault("doNothing", new DoNothing());	// Adds default action to autoChooser of DoNothing
 		autoChooser.addObject("autonomousCode", new AutonomousCode());	// Adds a second option to the robot 
@@ -46,6 +52,15 @@ public class Robot extends IterativeRobot {
 		// arm = new Arm();			// Initializes the Robot's arm and calls its constructor TODO uncomment arm initialization
 		elevator = new Elevator();	// Initializes the Robot's Elevator and calls its constructor 
 		oi = new OI();				// Initializes the Robot's OI and calls its constructor
+=======
+		autoChooser = new SendableChooser();
+		//autoChooser.addDefault("doNothing", new doNothing());
+		//autoChooser.addDefault("autonomousCode", new autonomousCode());
+		chassis = new Chassis();
+		//arm = new Arm();
+		elevator = new Elevator();
+		oi = new OI();
+>>>>>>> origin/master
 		// instantiate the command used for the autonomous period
 		// If you see this part of the code and know a Kyle Inzunza, tell him to
 		// get Motorvated --Steven
