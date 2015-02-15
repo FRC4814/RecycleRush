@@ -1,4 +1,4 @@
-package org.usfirst.frc.team4814.robot.commands;
+/*package org.usfirst.frc.team4814.robot.subsystems;
 
 import org.usfirst.frc.team4814.robot.Robot;
 
@@ -9,9 +9,7 @@ import edu.wpi.first.wpilibj.DigitalSource;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.livewindow.LiveWindowSendable;
 import edu.wpi.first.wpilibj.DigitalInput;
-/**
- *
- */
+
 DigitalInput(int channel)
 public class DigitalInput extends Command implements LiveWindowSendable{
 
@@ -44,4 +42,4 @@ public class DigitalInput extends Command implements LiveWindowSendable{
     }
 }
 
-
+*/

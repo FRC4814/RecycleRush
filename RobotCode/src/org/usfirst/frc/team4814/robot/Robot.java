@@ -2,7 +2,7 @@ package org.usfirst.frc.team4814.robot;
 
 import org.usfirst.frc.team4814.robot.autocommands.AutoTest;
 import org.usfirst.frc.team4814.robot.autocommands.DriveFor;
-import org.usfirst.frc.team4814.robot.commands.DigitalInput;
+//import org.usfirst.frc.team4814.robot.commands.DigitalInput; //TODO FIX THIS
 import org.usfirst.frc.team4814.robot.commands.ElevatorDown;
 import org.usfirst.frc.team4814.robot.commands.ElevatorUp;
 import org.usfirst.frc.team4814.robot.subsystems.Arm;
