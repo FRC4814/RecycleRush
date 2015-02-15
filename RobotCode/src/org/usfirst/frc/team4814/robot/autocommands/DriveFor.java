@@ -10,38 +10,38 @@ import edu.wpi.first.wpilibj.command.Command;
  * 
  */
 public class DriveFor extends Command {
-	private double leftPower;
-	private double rightPower;
-	private double distance;
+	private double leftPower;	// Power for the left motor
+	private double rightPower;	// Power for the right motor
+	private double distance;	// Distance in Inches
 	
     //Called in autonomous
 	public DriveFor(double leftPower, double rightPower, double distance) {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.chassis);
-        this.leftPower = .5;
-        this.rightPower = .5;
-        this.distance = 20;
+        this.leftPower = .5;	// The amount of power given to the left motors
+        this.rightPower = .5;	// The amount of power given to the right motors
+        this.distance = 20;		// Distance to travel //TODO multiply 
     }
 
     // Called just before this Command runs the first time
     // If you know Kyle Inzunza, tell him to get motorvated
     protected void initialize() {
-    	Robot.chassis.getEncoderLeft().reset();//set encoders to zero
-    	Robot.chassis.getEncoderRight().reset();
+    	Robot.chassis.getEncoderLeft().reset();	// Sets the left encoders to zero 
+    	Robot.chassis.getEncoderRight().reset();// Sets the right encoders to zero
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.chassis.drive(leftPower, rightPower);
+    	Robot.chassis.drive(leftPower, rightPower);	// Moves the motors with the respective values given
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	if (Robot.chassis.getEncoderLeft().getDistance() < 
-    		distance && Robot.chassis.getEncoderRight().getDistance() < distance) {
-    		return true;
+    	// Tests to see if either encoder has reached the distance it requires
+    	if (Robot.chassis.getEncoderLeft().getDistance()*12.566370614359172 < distance && Robot.chassis.getEncoderRight().getDistance()*12.566370614359172 < distance) {
+    		return false;
 		}
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

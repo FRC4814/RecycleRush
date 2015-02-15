@@ -3,7 +3,7 @@ package org.usfirst.frc.team4814.robot.autocommands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
- *
+ * Test trial for autonomous period
  */
 public class AutoTest extends CommandGroup {
     
