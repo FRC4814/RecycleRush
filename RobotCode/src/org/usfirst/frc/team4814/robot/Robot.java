@@ -5,10 +5,10 @@ import org.usfirst.frc.team4814.robot.autocommands.DriveFor;
 import org.usfirst.frc.team4814.robot.commands.ElevatorDown;
 import org.usfirst.frc.team4814.robot.commands.ElevatorUp;
 import org.usfirst.frc.team4814.robot.subsystems.Arm;
+import org.usfirst.frc.team4814.robot.subsystems.AutonomousCode;
 import org.usfirst.frc.team4814.robot.subsystems.Chassis;
+import org.usfirst.frc.team4814.robot.subsystems.DoNothing;
 import org.usfirst.frc.team4814.robot.subsystems.Elevator;
-import org.usfirst.frc.team4814.robot.subsystems.autonomousCode;
-import org.usfirst.frc.team4814.robot.subsystems.doNothing;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -25,44 +25,51 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
  */
 public class Robot extends IterativeRobot {
 
-	public static Chassis chassis ;
-	public static Elevator elevator; 
-	public static DriveFor DriveFor;
-	public static Arm arm; 
-	public static OI oi;
+	public static Chassis chassis; 		// Creates the Chassis for the robot, allowing driving
+	public static Elevator elevator; 	// Creates the Elevator for the robot, allowing lifting
+	public static DriveFor DriveFor; 	// TODO Remove for final version of code
+	public static Arm arm; 				// Creates the Arm for the robot, allowing it's raising and lowering
+	public static OI oi; 				// Creates the Inputs from the driver to the robot
 
-	Command autonomousCommand;
-		SendableChooser autoChooser;
+	Command autonomousCommand;		// Calls the autonomous commands for the robot
+	SendableChooser autoChooser;	// Choose which autonomous mode we play using
+
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
 	 */
 	public void robotInit() {
-		autoChooser = new SendableChooser();
-		autoChooser.addDefault("doNothing", new doNothing());
-		autoChooser.addDefault("autonomousCode", new autonomousCode());
-		chassis = new Chassis();
-		//arm = new Arm();
-		elevator = new Elevator();
-		oi = new OI();
+		autoChooser = new SendableChooser();	// Initializing autoChooser
+		autoChooser.addDefault("doNothing", new DoNothing());	// Adds default action to autoChooser of DoNothing
+		autoChooser.addObject("autonomousCode", new AutonomousCode());	// Adds a second option to the robot 
+		chassis = new Chassis();	// Initializes the Chassis and calls its constructor
+		// arm = new Arm();			// Initializes the Robot's arm and calls its constructor TODO uncomment arm initialization
+		elevator = new Elevator();	// Initializes the Robot's Elevator and calls its constructor 
+		oi = new OI();				// Initializes the Robot's OI and calls its constructor
 		// instantiate the command used for the autonomous period
 		// If you see this part of the code and know a Kyle Inzunza, tell him to
 		// get Motorvated --Steven
-		oi.rightButton3.whileHeld(new ElevatorUp());
-		oi.rightButton2.whileHeld(new ElevatorDown());
-		//oi.rightButton4.whenPressed(new Interpreter());
-		//oi.rightButton5.whenPressed(new InputReader());
+		oi.rightButton3.whileHeld(new ElevatorUp());	// Moves the elevator up while the right joystick's button 3 is held
+		oi.rightButton2.whileHeld(new ElevatorDown());	// Moves the elevator down while the right joystick's button 2 is held
+		// oi.rightButton4.whenPressed(new Interpreter());	// Starts recording user input when button 4 is pressed TODO Uncomment Interpreter initialization
+		// oi.rightButton5.whenPressed(new InputReader());	// Starts reading the recorded user input when button 5 is pressed TODO Uncomment output reader initialization
 	}
-
+	/**
+	 * Called after * returns false
+	 */
 	public void disabledPeriodic() {
+		// Stops the periodic checker from being called
 		Scheduler.getInstance().run();
 	}
-
+	/**
+	 * Called during the start of the autonomous period to start the autonomousCommand function
+	 */
 	public void autonomousInit() {
 		// schedule the autonomous command (example)
-		//autonomousComand = (Command) autonomous;
+		// autonomousComand = (Command) autonomous;
 		autonomousCommand = new AutoTest();
-		if (autonomousCommand != null) autonomousCommand.start();
+		if (autonomousCommand != null)
+			autonomousCommand.start();
 	}
 
 	/**
@@ -70,7 +77,6 @@ public class Robot extends IterativeRobot {
 	 */
 	public void autonomousPeriodic() {
 		Scheduler.getInstance().run();
-
 	}
 
 	public void teleopInit() {
