@@ -2,6 +2,7 @@ package org.usfirst.frc.team4814.robot;
 
 import org.usfirst.frc.team4814.robot.autocommands.AutoTest;
 import org.usfirst.frc.team4814.robot.autocommands.DriveFor;
+import org.usfirst.frc.team4814.robot.commands.DigitalInput;
 import org.usfirst.frc.team4814.robot.commands.ElevatorDown;
 import org.usfirst.frc.team4814.robot.commands.ElevatorUp;
 import org.usfirst.frc.team4814.robot.subsystems.Arm;
@@ -9,6 +10,7 @@ import org.usfirst.frc.team4814.robot.subsystems.AutonomousCode;
 import org.usfirst.frc.team4814.robot.subsystems.Chassis;
 import org.usfirst.frc.team4814.robot.subsystems.DoNothing;
 import org.usfirst.frc.team4814.robot.subsystems.Elevator;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -23,7 +25,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
  * directory.
  */
 public class Robot extends IterativeRobot {
-
+	
+	//public static DigitalInput DigitalInput;
 	public static Chassis chassis; 		// Creates the Chassis for the robot, allowing driving
 	public static Elevator elevator; 	// Creates the Elevator for the robot, allowing lifting
 	public static DriveFor DriveFor; 	// TODO Remove for final version of code

@@ -15,7 +15,8 @@ public class DriveFor extends Command {
 	private double distance;	// Distance in Inches
 	
     //Called in autonomous
-	public DriveFor(double leftPower, double rightPower, double distance) {
+	//public DriveFor(double leftPower, double rightPower, double distance) {//TODO fix this
+	public DriveFor(double leftPower, double distance) {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.chassis);
         this.leftPower = .5;	// The amount of power given to the left motors
@@ -27,7 +28,7 @@ public class DriveFor extends Command {
     // If you know Kyle Inzunza, tell him to get motorvated
     protected void initialize() {
     	Robot.chassis.getEncoderLeft().reset();	// Sets the left encoders to zero 
-    	Robot.chassis.getEncoderRight().reset();// Sets the right encoders to zero
+    	//Robot.chassis.getEncoderRight().reset();// Sets the right encoders to zero
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -38,7 +39,9 @@ public class DriveFor extends Command {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	// Tests to see if either encoder has reached the distance it requires
-    	if (Robot.chassis.getEncoderLeft().getDistance()*12.566370614359172 < distance && Robot.chassis.getEncoderRight().getDistance()*12.566370614359172 < distance) {
+    	if (Robot.chassis.getEncoderLeft().getDistance()*12.566370614359172 < distance) //&& Robot.chassis.getEncoderRight().getDistance()*12.566370614359172 < 
+    			//distance) //TODO FIIXXX THISS
+    			{
     		return false;
 		}
         return true;

@@ -38,14 +38,14 @@ public class Chassis extends Subsystem {
  	}
 
 	public Encoder getEncoderLeft() {
-		return encoderLeft;
+		return encoderLeft;//returnes pulses of encoder
 	}
 	
 	/**
 	 * @return the right encoder's distance
 	 */
 	public Encoder getEncoderRight() {
-		return encoderRight;
+		return encoderRight;//returnes pulses of encoder
 	}
 
 	/**
