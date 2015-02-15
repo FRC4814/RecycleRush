@@ -8,7 +8,7 @@ import org.usfirst.frc.team4814.robot.subsystems.Arm;
 import org.usfirst.frc.team4814.robot.subsystems.Chassis;
 import org.usfirst.frc.team4814.robot.subsystems.Elevator;
 import org.usfirst.frc.team4814.robot.subsystems.autonomousCode;
-import org.usfirst.frc.team4814.robot.subsystems.doNothing;
+import org.usfirst.frc.team4814.robot.subsystems.DoNothing;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -39,7 +39,7 @@ public class Robot extends IterativeRobot {
 	 */
 	public void robotInit() {
 		autoChooser = new SendableChooser();
-		autoChooser.addDefault("doNothing", new doNothing());
+		autoChooser.addDefault("doNothing", new DoNothing());
 		autoChooser.addDefault("autonomousCode", new autonomousCode());
 		chassis = new Chassis();
 		//arm = new Arm();
