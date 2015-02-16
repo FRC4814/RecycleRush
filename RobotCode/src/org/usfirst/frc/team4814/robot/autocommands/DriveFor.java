@@ -21,13 +21,15 @@ public class DriveFor extends Command {
         requires(Robot.chassis);
         this.leftPower = .5;	// The amount of power given to the left motors
         this.rightPower = .5;	// The amount of power given to the right motors
-        this.distance = 20;		// Distance to travel //TODO multiply 
+        this.distance = 12.566370614359172;		// Distance to travel //TODO multiply 
     }
 
     // Called just before this Command runs the first time
     // If you know Kyle Inzunza, tell him to get motorvated
     protected void initialize() {
-    	Robot.chassis.getEncoderLeft().reset();	// Sets the left encoders to zero 
+    	System.out.println("REset");
+    	Robot.chassis.getEncoderLeft().reset();
+    	// Sets the left encoders to zero 
     	//Robot.chassis.getEncoderRight().reset();// Sets the right encoders to zero
     }
 
@@ -39,12 +41,13 @@ public class DriveFor extends Command {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	// Tests to see if either encoder has reached the distance it requires
-    	if (Robot.chassis.getEncoderLeft().getDistance()*12.566370614359172 < distance) //&& Robot.chassis.getEncoderRight().getDistance()*12.566370614359172 < 
+    	System.out.println(Robot.chassis.getEncoderLeft().getDistance());
+    	if (Robot.chassis.getEncoderLeft().getDistance() >= distance) //&& Robot.chassis.getEncoderRight().getDistance()*12.566370614359172 < 
     			//distance) //TODO FIIXXX THISS
     			{
-    		return false;
+    		//return true;
 		}
-        return true;
+        return false;
     }
 
     // Called once after isFinished returns true

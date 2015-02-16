@@ -13,7 +13,7 @@ public class Interpreter extends Command {
 	public Interpreter() {
 		// Use requires() here to declare subsystem dependencies
 		requires(Robot.chassis);
-		requires(Robot.arm);
+		//requires(Robot.arm);
 		requires(Robot.elevator);
 	}
 
@@ -27,7 +27,7 @@ public class Interpreter extends Command {
 		// Gathers values from throughout the robot and saves them to temporary double variables
 		double leftPower = Robot.chassis.getLeftPower();
 		double rightPower = Robot.chassis.getRightPower();
-		double armPower = Robot.arm.getArmPower();
+		double armPower = 0; //Robot.arm.getArmPower();
 		double elevatorPower = Robot.elevator.getElevatorPower();
 		// Sends the temporary double variables into the outputWriter to add to it's String
 		outputWriter.writeText(leftPower, rightPower, armPower, elevatorPower);

@@ -19,6 +19,15 @@ public class InputReader extends Command {
 	
     public InputReader() {
         
+    	
+    }
+
+    public void reader(){
+    	
+    }
+    
+    // Called just before this Command runs the first time
+    protected void initialize() {
     	//initializes scanner and sets to the text file
     	Scanner scanner = null;
     	try {
@@ -33,14 +42,6 @@ public class InputReader extends Command {
     		dataStack.add(scanner.nextLine());
     	}
     	scanner.close();
-    }
-
-    public void reader(){
-    	
-    }
-    
-    // Called just before this Command runs the first time
-    protected void initialize() {
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -60,8 +61,8 @@ public class InputReader extends Command {
 	    	//Robot.elevator.setElevatorPower(Double.parseDouble(temp.substring(0, temp.indexOf(','))));
 	    	//temp = temp.substring(temp.indexOf(','));
 	    	
-	    	Robot.arm.setArmPower(armPower);
-	    	Robot.elevator.setElevatorPower(elevatorPower);
+	    	//Robot.arm.setArmPower(armPower);
+	    	//Robot.elevator.setElevatorPower(elevatorPower);
     	}
     }
 

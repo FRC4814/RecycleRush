@@ -27,6 +27,6 @@ public class AutoTest extends CommandGroup {
     	
     	//addSequential(new DriveFor(.5, .5,20));//left power,rightpower, distance
     	addSequential(new DriveFor(.5,20));//TODO FIX THIS
-    	addSequential (new SpinLeft(5)); //seconds
+    	//addSequential (new SpinLeft(5)); //seconds
     }
 }

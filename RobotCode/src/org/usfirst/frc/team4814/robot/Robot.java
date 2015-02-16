@@ -5,6 +5,8 @@ import org.usfirst.frc.team4814.robot.autocommands.DriveFor;
 //import org.usfirst.frc.team4814.robot.commands.DigitalInput; //TODO FIX THIS
 import org.usfirst.frc.team4814.robot.commands.ElevatorDown;
 import org.usfirst.frc.team4814.robot.commands.ElevatorUp;
+import org.usfirst.frc.team4814.robot.commands.InputReader;
+import org.usfirst.frc.team4814.robot.commands.Interpreter;
 import org.usfirst.frc.team4814.robot.subsystems.Arm;
 import org.usfirst.frc.team4814.robot.subsystems.AutonomousCode;
 import org.usfirst.frc.team4814.robot.subsystems.Chassis;
@@ -51,15 +53,14 @@ public class Robot extends IterativeRobot {
 		autoChooser = new SendableChooser();
 		//autoChooser.addDefault("doNothing", new doNothing());
 		//autoChooser.addDefault("autonomousCode", new autonomousCode());
-		chassis = new Chassis();
-		//arm = new Arm();
-		elevator = new Elevator();
-		oi = new OI();
+		
 		// instantiate the command used for the autonomous period
 		// If you see this part of the code and know a Kyle Inzunza, tell him to
 		// get Motorvated --Steven
 		oi.rightButton3.whileHeld(new ElevatorUp());	// Moves the elevator up while the right joystick's button 3 is held
 		oi.rightButton2.whileHeld(new ElevatorDown());	// Moves the elevator down while the right joystick's button 2 is held
+		oi.recordButton.whileHeld(new Interpreter());
+		oi.playbackButton.whenPressed(new InputReader());
 		// oi.rightButton4.whenPressed(new Interpreter());	// Starts recording user input when button 4 is pressed TODO Uncomment Interpreter initialization
 		// oi.rightButton5.whenPressed(new InputReader());	// Starts reading the recorded user input when button 5 is pressed TODO Uncomment output reader initialization
 	}
@@ -93,8 +94,10 @@ public class Robot extends IterativeRobot {
 		// teleop starts running. If you want the autonomous to
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
-		if (autonomousCommand != null)
-			autonomousCommand.start();
+		if (autonomousCommand != null){			
+			autonomousCommand.cancel();
+			autonomousCommand = null;
+			}
 	}
 
 	/**

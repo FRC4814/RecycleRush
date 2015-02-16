@@ -17,8 +17,8 @@ public class OI {
     public Attack3Joystick rightStick = new Attack3Joystick(1);
     public JoystickButton rightButton2 = new JoystickButton(rightStick, 2);
     public JoystickButton rightButton3 = new JoystickButton(rightStick, 3);
-    public JoystickButton rightButton4 = new JoystickButton(rightStick, 4);
-    public JoystickButton rightButton5 = new JoystickButton(rightStick, 5);
+    public JoystickButton recordButton = new JoystickButton(rightStick, 4);
+    public JoystickButton playbackButton = new JoystickButton(rightStick, 5);
     
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
