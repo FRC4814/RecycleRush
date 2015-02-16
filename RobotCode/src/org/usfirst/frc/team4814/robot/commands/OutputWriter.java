@@ -1,9 +1,6 @@
 package org.usfirst.frc.team4814.robot.commands;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.DataOutputStream;
 
 /**
  *
@@ -24,41 +21,6 @@ public class OutputWriter {
 	}
 
 	public void save() { //writes to text file
-		
-            /*
-		FileOutputStream FOS = null;
-		PrintWriter writer;
-		File file = new File("c:/data.txt");
-		
-		try{
-			
-			FOS = new FileOutputStream(file);
-			writer = new PrintWriter(FOS);
-			if(!file.exists()){
-				file.createNewFile();
-			}
-			
-			writer.println(data);
-			
-		}catch(IOException e){
-			
-		}
-		
-	 	
-		FileOutputStream fileHandle2 = null; // Location of the output file
-		PrintWriter writer; // Writer for the text
-		String fileName = "info.txt"; // File location name
-		try {
-			fileHandle2 = new FileOutputStream(fileName);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} // location of data
-		writer = new PrintWriter(fileHandle2); // print writer
-		writer.println(data); // prints the information
-		writer.close();
-		
-		
-		
 		DataOutputStream theFile;
 		FileConnection fc;
 		try{
@@ -68,9 +30,6 @@ public class OutputWriter {
 		} catch (Exception e){
 			
 		}
-		com.squ
-		
-		
-		*/	
+		com.squ	
 	}
 }
