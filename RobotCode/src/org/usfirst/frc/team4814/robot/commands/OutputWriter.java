@@ -18,11 +18,12 @@ public class OutputWriter {
 	public void writeText(double forwardPower, double turnPower, 
 			double armPower, double elevatorPower) {
 		//writes to variable to text file to store motions 
-		data.concat(forwardPower + "," + turnPower + "," + armPower + ","
+		data = data.concat(forwardPower + "," + turnPower + "," + armPower + ","
 				+ elevatorPower + "\n");
 	}
 
 	public void save() { //writes to text file
+		System.out.println("data"+ data);
 		FileOutputStream fileHandle2 = null; // Location of the output file
 		PrintWriter writer; // Writer for the text
 		String fileName = "/home/lvuser/info.txt"; // File location name
@@ -32,7 +33,8 @@ public class OutputWriter {
 			e.printStackTrace();
 		} // location of data
 		writer = new PrintWriter(fileHandle2); // print writer
-		writer.println(data); // prints the information
+		writer.write(data); // prints the information
 		writer.close();
+		
 	}
 }

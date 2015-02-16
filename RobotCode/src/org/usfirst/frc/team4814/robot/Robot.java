@@ -59,7 +59,7 @@ public class Robot extends IterativeRobot {
 		// get Motorvated --Steven
 		oi.rightButton3.whileHeld(new ElevatorUp());	// Moves the elevator up while the right joystick's button 3 is held
 		oi.rightButton2.whileHeld(new ElevatorDown());	// Moves the elevator down while the right joystick's button 2 is held
-		oi.recordButton.whileHeld(new Interpreter());
+		oi.recordButton.whenPressed(new Interpreter());
 		oi.playbackButton.whenPressed(new InputReader());
 		// oi.rightButton4.whenPressed(new Interpreter());	// Starts recording user input when button 4 is pressed TODO Uncomment Interpreter initialization
 		// oi.rightButton5.whenPressed(new InputReader());	// Starts reading the recorded user input when button 5 is pressed TODO Uncomment output reader initialization

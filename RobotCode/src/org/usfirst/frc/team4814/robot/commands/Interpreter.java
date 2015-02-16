@@ -15,6 +15,7 @@ public class Interpreter extends Command {
 		requires(Robot.chassis);
 		//requires(Robot.arm);
 		requires(Robot.elevator);
+		setTimeout(10);
 	}
 
 	// Called just before this Command runs the first time
@@ -35,7 +36,7 @@ public class Interpreter extends Command {
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		return false;
+		return isTimedOut();
 	}
 
 	// Called once after isFinished returns true

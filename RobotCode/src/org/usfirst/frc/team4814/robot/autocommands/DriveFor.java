@@ -41,7 +41,7 @@ public class DriveFor extends Command {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	// Tests to see if either encoder has reached the distance it requires
-    	System.out.println(Robot.chassis.getEncoderLeft().getDistance());
+    	System.out.println(Robot.chassis.getEncoderLeft().get());
     	if (Robot.chassis.getEncoderLeft().getDistance() >= distance) //&& Robot.chassis.getEncoderRight().getDistance()*12.566370614359172 < 
     			//distance) //TODO FIIXXX THISS
     			{
