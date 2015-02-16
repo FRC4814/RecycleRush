@@ -1,8 +1,6 @@
 package org.usfirst.frc.team4814.robot.commands;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
+import java.io.DataOutputStream;
 
 /**
  *
@@ -23,16 +21,15 @@ public class OutputWriter {
 	}
 
 	public void save() { //writes to text file
-		FileOutputStream fileHandle2 = null; // Location of the output file
-		PrintWriter writer; // Writer for the text
-		String fileName = "info.txt"; // File location name
-		try {
-			fileHandle2 = new FileOutputStream(fileName);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} // location of data
-		writer = new PrintWriter(fileHandle2); // print writer
-		writer.println(data); // prints the information
-		writer.close();
+		DataOutputStream theFile;
+		FileConnection fc;
+		try{
+			fc = (FileConnection)Connector.open("file:///output.txt", Connector.WRITE);
+			fc.create();
+			theFile = fc.openDataOutputSteam();
+		} catch (Exception e){
+			
+		}
+		com.squ	
 	}
 }
