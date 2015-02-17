@@ -9,7 +9,6 @@ import org.usfirst.frc.team4814.robot.subsystems.Arm;
 import org.usfirst.frc.team4814.robot.subsystems.Chassis;
 import org.usfirst.frc.team4814.robot.subsystems.DoNothing;
 import org.usfirst.frc.team4814.robot.subsystems.Elevator;
-import org.usfirst.frc.team4814.robot.subsystems.MyDigitalInput;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -26,7 +25,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
  */
 public class Robot extends IterativeRobot {
 	
-	public static MyDigitalInput MyDigitalInput;
 	public static Chassis chassis; 		// drive code
 	public static Elevator elevator;
 	public static DriveFor DriveFor; 	// TODO this will be changed to InputReader
