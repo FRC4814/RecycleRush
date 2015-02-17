@@ -13,12 +13,20 @@ public class OI {
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
     // number it is.
-    public Attack3Joystick leftStick = new Attack3Joystick(0);    
-    public Attack3Joystick rightStick = new Attack3Joystick(1);
-    public JoystickButton rightButton2 = new JoystickButton(rightStick, 2);
-    public JoystickButton rightButton3 = new JoystickButton(rightStick, 3);
-    public JoystickButton recordButton = new JoystickButton(rightStick, 4);
-    public JoystickButton playbackButton = new JoystickButton(rightStick, 5);
+	
+	// Driver controls
+    public Attack3Joystick driverLeftStick = new Attack3Joystick(0);    
+    public Attack3Joystick driverRightStick = new Attack3Joystick(1);
+    public JoystickButton rightButton2 = new JoystickButton(driverRightStick, 2);
+    public JoystickButton rightButton3 = new JoystickButton(driverRightStick, 3);
+    public JoystickButton recordButton = new JoystickButton(driverRightStick, 4);
+    public JoystickButton playbackButton = new JoystickButton(driverRightStick, 5);
+    
+    // Operator controls
+    public Attack3Joystick operatorLeftStick = new Attack3Joystick(2);
+    public Attack3Joystick operatorRightStick = new Attack3Joystick(3);
+    public static final int[] ELEVATOR_LEVEL = {6,7,10,11};
+    public JoystickButton elevatorLevel[] = new JoystickButton[4];
     //public JoystickButton playbackButton = new JoystickButton(rightStick, 1);
     
     // There are a few additional built in buttons you can use. Additionally,
@@ -40,5 +48,10 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
+    public OI() {
+    	for (int i = 0; i < elevatorLevel.length; i++) {
+			elevatorLevel[i] = new JoystickButton(operatorRightStick, ELEVATOR_LEVEL[i]);
+		}
+    }
 }
 

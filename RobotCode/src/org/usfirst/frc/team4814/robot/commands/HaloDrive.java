@@ -21,8 +21,8 @@ public class HaloDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double forwardPower = -Robot.oi.leftStick.getDeadY();
-    	double turnMod = Robot.oi.rightStick.getDeadX();
+    	double forwardPower = -Robot.oi.driverLeftStick.getDeadY();
+    	double turnMod = Robot.oi.driverRightStick.getDeadX();
     	double leftPower = forwardPower;
     	double rightPower = forwardPower; 
     	

@@ -19,7 +19,6 @@ public class DriveFor extends Command {
 	public DriveFor(double leftPower, double distance) {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.chassis);
-        //overwrites AutoTest parameters 
         this.leftPower = leftPower;	// Power for Left Motor	
         this.rightPower = .5;		// Power for Right Motor
         this.distance = distance;	// Distance to travel in Inches 
