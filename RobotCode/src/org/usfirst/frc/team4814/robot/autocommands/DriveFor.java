@@ -20,9 +20,9 @@ public class DriveFor extends Command {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.chassis);
         //overwrites AutoTest parameters 
-        this.leftPower = .5;	
-        this.rightPower = .5;	
-        this.distance = 12.566370614359172;		// wheel circumfrence, devided by pulses in chassis 
+        this.leftPower = leftPower;	// Power for Left Motor	
+        this.rightPower = .5;		// Power for Right Motor
+        this.distance = distance;	// Distance to travel in Inches 
     }
 
     // Called just before this Command runs the first time
@@ -43,10 +43,9 @@ public class DriveFor extends Command {
     protected boolean isFinished() {
     	// Tests to see if either encoder has reached the distance it requires
     	System.out.println(Robot.chassis.getEncoderLeft().get());
-    	if (Robot.chassis.getEncoderLeft().getDistance() >= distance) //&& Robot.chassis.getEncoderRight().getDistance()*12.566370614359172 < 
-    			//distance) //TODO FIIXXX THISS
-    			{
-    		//return true;
+    	if (Robot.chassis.getEncoderLeft().getDistance() >= distance) //&& Robot.chassis.getEncoderRight().getDistance() < distance) //TODO FIIXXX THISS
+    	{
+    		return true;
 		}
         return false;
     }
