@@ -31,7 +31,7 @@ public class Robot extends IterativeRobot {
 	
 	public static MyDigitalInput MyDigitalInput;
 	public static Chassis chassis; 		// drive code
-	public static Elevator elevator; 	
+	public static Elevator elevator;
 	public static DriveFor DriveFor; 	// TODO this will be changed to InputReader
 	public static Arm arm; 				
 	public static OI oi; 				
