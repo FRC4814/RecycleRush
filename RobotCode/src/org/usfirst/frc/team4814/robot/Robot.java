@@ -5,8 +5,8 @@ import org.usfirst.frc.team4814.robot.autocommands.DriveFor;
 //import org.usfirst.frc.team4814.robot.commands.DigitalInput; //TODO FIX THIS
 import org.usfirst.frc.team4814.robot.commands.ElevatorDown;
 import org.usfirst.frc.team4814.robot.commands.ElevatorUp;
-import org.usfirst.frc.team4814.robot.commands.InputReader;
-import org.usfirst.frc.team4814.robot.commands.Interpreter;
+import org.usfirst.frc.team4814.robot.autocommands.InputReader;
+import org.usfirst.frc.team4814.robot.autocommands.Interpreter;
 import org.usfirst.frc.team4814.robot.subsystems.Arm;
 import org.usfirst.frc.team4814.robot.subsystems.AutonomousCode;
 import org.usfirst.frc.team4814.robot.subsystems.Chassis;
