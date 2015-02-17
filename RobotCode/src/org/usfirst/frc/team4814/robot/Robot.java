@@ -8,7 +8,6 @@ import org.usfirst.frc.team4814.robot.commands.ElevatorUp;
 import org.usfirst.frc.team4814.robot.autocommands.InputReader;
 import org.usfirst.frc.team4814.robot.autocommands.Interpreter;
 import org.usfirst.frc.team4814.robot.subsystems.Arm;
-import org.usfirst.frc.team4814.robot.subsystems.AutonomousCode;
 import org.usfirst.frc.team4814.robot.subsystems.Chassis;
 import org.usfirst.frc.team4814.robot.subsystems.DoNothing;
 import org.usfirst.frc.team4814.robot.subsystems.Elevator;
@@ -46,7 +45,7 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		autoChooser = new SendableChooser();	// Initializing autoChooser
 		autoChooser.addDefault("doNothing", new DoNothing());	// Adds default action to autoChooser of DoNothing
-		autoChooser.addObject("autonomousCode", new AutonomousCode());	// Adds a second option to the robot 
+		//autoChooser.addObject("autonomousCode", new AutonomousCode());	// Adds a second option to the robot 
 		
 		//initializes and calls constructor
 		// arm = new Arm();			//TODO uncomment arm initialization
