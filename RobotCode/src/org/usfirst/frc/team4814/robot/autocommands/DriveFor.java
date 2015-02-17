@@ -24,7 +24,7 @@ public class DriveFor extends Command {
         this.distance = distance;	// Distance to travel in Inches 
     }
 
-    // Called just before this Command runs the first time
+	// Called just before this Command runs the first time
     // If you know Kyle Inzunza, tell him to get motorvated
     protected void initialize() {
     	System.out.println("Reset");

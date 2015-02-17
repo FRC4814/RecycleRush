@@ -1,5 +1,7 @@
 package org.usfirst.frc.team4814.robot.autocommands;
 
+import org.usfirst.frc.team4814.robot.commands.HaloDrive;
+
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
@@ -26,7 +28,10 @@ public class AutoTest extends CommandGroup {
         // arm.
     	
     	//addSequential(new DriveFor(.5, .5,20));//left power,rightpower, distance
-    	addSequential(new DriveFor(.2,20));//TODO fix this //change paramaters in DriveFor
+    	addParallel(new DriveFor(.2,20));//TODO fix this //change paramaters in DriveFor
+    	addParallel(new Interpreter());
+    	addParallel(new InputReader());
+    	addParallel(new HaloDrive());
     	//addSequential (new SpinLeft(5)); //seconds
     }
 }
