@@ -12,6 +12,7 @@ import org.usfirst.frc.team4814.robot.subsystems.AutonomousCode;
 import org.usfirst.frc.team4814.robot.subsystems.Chassis;
 import org.usfirst.frc.team4814.robot.subsystems.DoNothing;
 import org.usfirst.frc.team4814.robot.subsystems.Elevator;
+import org.usfirst.frc.team4814.robot.subsystems.MyDigitalInput;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -28,14 +29,14 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
  */
 public class Robot extends IterativeRobot {
 	
-	//public static DigitalInput DigitalInput;
-	public static Chassis chassis; 		// Creates the Chassis for the robot, allowing driving
-	public static Elevator elevator; 	// Creates the Elevator for the robot, allowing lifting
-	public static DriveFor DriveFor; 	// TODO Remove for final version of code
-	public static Arm arm; 				// Creates the Arm for the robot, allowing it's raising and lowering
-	public static OI oi; 				// Creates the Inputs from the driver to the robot
+	public static MyDigitalInput MyDigitalInput;
+	public static Chassis chassis; 		// drive code
+	public static Elevator elevator; 	
+	public static DriveFor DriveFor; 	// TODO this will be changed to InputReader
+	public static Arm arm; 				
+	public static OI oi; 				
 
-	Command autonomousCommand;		// Calls the autonomous commands for the robot
+	Command autonomousCommand;		
 	SendableChooser autoChooser;	// Choose which autonomous mode we play using
 
 	/**
@@ -46,23 +47,28 @@ public class Robot extends IterativeRobot {
 		autoChooser = new SendableChooser();	// Initializing autoChooser
 		autoChooser.addDefault("doNothing", new DoNothing());	// Adds default action to autoChooser of DoNothing
 		autoChooser.addObject("autonomousCode", new AutonomousCode());	// Adds a second option to the robot 
-		chassis = new Chassis();	// Initializes the Chassis and calls its constructor
-		// arm = new Arm();			// Initializes the Robot's arm and calls its constructor TODO uncomment arm initialization
-		elevator = new Elevator();	// Initializes the Robot's Elevator and calls its constructor 
-		oi = new OI();				// Initializes the Robot's OI and calls its constructor
+		
+		//initializes and calls constructor
+		// arm = new Arm();			//TODO uncomment arm initialization
+		chassis = new Chassis();			
+		elevator = new Elevator();	 
+		oi = new OI();				
 		autoChooser = new SendableChooser();
+		// instantiate the command used for the autonomous period
 		//autoChooser.addDefault("doNothing", new doNothing());
 		//autoChooser.addDefault("autonomousCode", new autonomousCode());
 		
-		// instantiate the command used for the autonomous period
 		// If you see this part of the code and know a Kyle Inzunza, tell him to
 		// get Motorvated --Steven
-		oi.rightButton3.whileHeld(new ElevatorUp());	// Moves the elevator up while the right joystick's button 3 is held
-		oi.rightButton2.whileHeld(new ElevatorDown());	// Moves the elevator down while the right joystick's button 2 is held
-		oi.recordButton.whenPressed(new Interpreter());
-		oi.playbackButton.whenPressed(new InputReader());
-		// oi.rightButton4.whenPressed(new Interpreter());	// Starts recording user input when button 4 is pressed TODO Uncomment Interpreter initialization
-		// oi.rightButton5.whenPressed(new InputReader());	// Starts reading the recorded user input when button 5 is pressed TODO Uncomment output reader initialization
+		
+		//elevator moves while buttons held
+		oi.rightButton3.whileHeld(new ElevatorUp());	
+		oi.rightButton2.whileHeld(new ElevatorDown());
+		
+		oi.recordButton.whenPressed(new Interpreter()); // Starts recording joystick output when button 4 is pressed 
+		oi.playbackButton.whenPressed(new InputReader());// plays back recorded outputs
+			
+			
 	}
 	/**
 	 * Called after * returns false
@@ -77,7 +83,7 @@ public class Robot extends IterativeRobot {
 	public void autonomousInit() {
 		// schedule the autonomous command (example)
 		// autonomousComand = (Command) autonomous;
-		autonomousCommand = new AutoTest();
+		autonomousCommand = new AutoTest();//where autonomous is called//TODO Change this to InputReader
 		if (autonomousCommand != null)
 			autonomousCommand.start();
 	}

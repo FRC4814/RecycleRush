@@ -10,8 +10,8 @@ import edu.wpi.first.wpilibj.command.Command;
  * 
  */
 public class DriveFor extends Command {
-	private double leftPower;	// Power for the left motor
-	private double rightPower;	// Power for the right motor
+	private double leftPower;	
+	private double rightPower;	
 	private double distance;	// Distance in Inches
 	
     //Called in autonomous
@@ -19,18 +19,19 @@ public class DriveFor extends Command {
 	public DriveFor(double leftPower, double distance) {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.chassis);
-        this.leftPower = .5;	// The amount of power given to the left motors
-        this.rightPower = .5;	// The amount of power given to the right motors
-        this.distance = 12.566370614359172;		// Distance to travel //TODO multiply 
+        //overwrites AutoTest parameters 
+        this.leftPower = .5;	
+        this.rightPower = .5;	
+        this.distance = 12.566370614359172;		// wheel circumfrence, devided by pulses in chassis 
     }
 
     // Called just before this Command runs the first time
     // If you know Kyle Inzunza, tell him to get motorvated
     protected void initialize() {
-    	System.out.println("REset");
-    	Robot.chassis.getEncoderLeft().reset();
-    	// Sets the left encoders to zero 
-    	//Robot.chassis.getEncoderRight().reset();// Sets the right encoders to zero
+    	System.out.println("Reset");
+    	// Sets encoders to zero 
+    	Robot.chassis.getEncoderLeft().reset();    	
+    	//Robot.chassis.getEncoderRight().reset();
     }
 
     // Called repeatedly when this Command is scheduled to run

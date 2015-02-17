@@ -1,5 +1,4 @@
 package org.usfirst.frc.team4814.robot;
-//USES HALLEFFEX SENSORS
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -14,8 +13,9 @@ public class RobotMap {
     public static final int[] RIGHT_MOTORS = {6,7}; // Front Right, Back Right
     public static final int[] ELEVATOR_MOTOR = {4,5}; // Motor set to elevator winch
     public static final int ARM_MOTOR = 7; // Motor set to arm winch
-    public static final int[] ENCODER_LEFT = {1,2 };//left side movement encoder
-   // public static final int[] ENCODER_RIGHT = {2, 3};//right side movement encoder
+  //encoder ports
+    public static final int[] ENCODER_LEFT = {1,2 };
+   // public static final int[] ENCODER_RIGHT = {2, 3};TODO fix this
     
     // If you are using multiple modules, make sure to define both the port
     // number and the module. For example you with a rangefinder:
