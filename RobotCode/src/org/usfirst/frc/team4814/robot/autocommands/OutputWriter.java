@@ -1,4 +1,4 @@
-package org.usfirst.frc.team4814.robot.commands;
+package org.usfirst.frc.team4814.robot.autocommands;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
