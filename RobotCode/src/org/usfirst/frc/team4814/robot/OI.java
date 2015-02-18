@@ -23,11 +23,10 @@ public class OI {
     public JoystickButton playbackButton = new JoystickButton(driverRightStick, 5);
     
     // Operator controls
+    public static final int[] ELEVATOR_LEVEL = {6,7,10,11};
     public Attack3Joystick operatorLeftStick = new Attack3Joystick(2);
     public Attack3Joystick operatorRightStick = new Attack3Joystick(3);
-    public static final int[] ELEVATOR_LEVEL = {6,7,10,11};
-    public JoystickButton elevatorLevel[] = new JoystickButton[4];
-    //public JoystickButton playbackButton = new JoystickButton(rightStick, 1);
+    public JoystickButton[] elevatorLevel = new JoystickButton[4];
     
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to

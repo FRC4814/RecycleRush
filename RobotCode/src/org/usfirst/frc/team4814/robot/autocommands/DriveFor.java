@@ -19,12 +19,12 @@ public class DriveFor extends Command {
 	public DriveFor(double leftPower, double distance) {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.chassis);
-        this.leftPower = leftPower;	// Power for Left Motor	
-        this.rightPower = .5;		// Power for Right Motor
-        this.distance = distance;	// Distance to travel in Inches 
+        this.leftPower = leftPower;		// Power for Left Motor	
+        this.rightPower = 0.5;	// Power for Right Motor
+        this.distance = distance;		// Distance to travel in Inches 
     }
 
-	// Called just before this Command runs the first time
+    // Called just before this Command runs the first time
     // If you know Kyle Inzunza, tell him to get motorvated
     protected void initialize() {
     	System.out.println("Reset");
@@ -57,5 +57,6 @@ public class DriveFor extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	
     }
 }

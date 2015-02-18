@@ -1,10 +1,11 @@
 package org.usfirst.frc.team4814.robot;
 import org.usfirst.frc.team4814.robot.autocommands.AutoTest;
 import org.usfirst.frc.team4814.robot.autocommands.DriveFor;
-import org.usfirst.frc.team4814.robot.commands.ElevatorDown;
-import org.usfirst.frc.team4814.robot.commands.ElevatorUp;
 import org.usfirst.frc.team4814.robot.autocommands.InputReader;
 import org.usfirst.frc.team4814.robot.autocommands.Interpreter;
+import org.usfirst.frc.team4814.robot.commands.ElevatorDown;
+import org.usfirst.frc.team4814.robot.commands.ElevatorUp;
+import org.usfirst.frc.team4814.robot.commands.ElevatorUpTo;
 import org.usfirst.frc.team4814.robot.subsystems.Arm;
 import org.usfirst.frc.team4814.robot.subsystems.Chassis;
 import org.usfirst.frc.team4814.robot.subsystems.DoNothing;
