@@ -8,7 +8,9 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class ElevatorUpTo extends Command {
+	
 	private int level;
+	
     public ElevatorUpTo(int level) {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.elevator);

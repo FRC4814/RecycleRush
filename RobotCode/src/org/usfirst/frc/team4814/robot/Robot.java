@@ -63,7 +63,11 @@ public class Robot extends IterativeRobot {
 		oi.recordButton.whenPressed(new Interpreter()); // Starts recording joystick output when button 4 is pressed 
 		oi.playbackButton.whenPressed(new InputReader());// plays back recorded outputs
 			
-			
+		oi.elevatorLevel[0].whenPressed(new ElevatorMoveTo(0)); //Moves the elevator to the
+		oi.elevatorLevel[1].whenPressed(new ElevatorMoveTo(1)); //appropriate level
+		oi.elevatorLevel[2].whenPressed(new ElevatorMoveTo(2));
+		oi.elevatorLevel[3].whenPressed(new ElevatorMoveTo(3));
+		oi.elevatorLevel[4].whenPressed(new ElevatorMoveTo(4));
 	}
 	/**
 	 * Called after * returns false
