@@ -61,9 +61,13 @@ public class Elevator extends Subsystem {
 	public void increaseCurrentElevatorLevel() {
 		this.currentElevatorLevel++;
 	}
-
-	/**
-	 * @return the armLowLimitSwitch
-	 */
+	
+	public void decreaseCurrentElevatorLevel() {
+		this.currentElevatorLevel--;
+	}
+	
+	public void setCurrentElevatorLevel(int currentElevatorLevel) {
+		this.currentElevatorLevel = currentElevatorLevel;
+	}
 }
 
