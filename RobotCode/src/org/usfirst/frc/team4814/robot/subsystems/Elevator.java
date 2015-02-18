@@ -2,7 +2,6 @@ package org.usfirst.frc.team4814.robot.subsystems;
 
 import org.usfirst.frc.team4814.robot.RobotMap;
 
-import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -58,14 +57,6 @@ public class Elevator extends Subsystem {
 		return currentElevatorLevel;
 	}
 
-	public void increaseCurrentElevatorLevel() {
-		this.currentElevatorLevel++;
-	}
-	
-	public void decreaseCurrentElevatorLevel() {
-		this.currentElevatorLevel--;
-	}
-	
 	public void setCurrentElevatorLevel(int currentElevatorLevel) {
 		this.currentElevatorLevel = currentElevatorLevel;
 	}

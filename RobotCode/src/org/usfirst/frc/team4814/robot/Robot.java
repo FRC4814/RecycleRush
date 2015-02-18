@@ -5,7 +5,6 @@ import org.usfirst.frc.team4814.robot.autocommands.InputReader;
 import org.usfirst.frc.team4814.robot.autocommands.Interpreter;
 import org.usfirst.frc.team4814.robot.commands.ElevatorDown;
 import org.usfirst.frc.team4814.robot.commands.ElevatorUp;
-import org.usfirst.frc.team4814.robot.commands.ElevatorMoveTo;
 import org.usfirst.frc.team4814.robot.subsystems.Arm;
 import org.usfirst.frc.team4814.robot.subsystems.Chassis;
 import org.usfirst.frc.team4814.robot.subsystems.DoNothing;
