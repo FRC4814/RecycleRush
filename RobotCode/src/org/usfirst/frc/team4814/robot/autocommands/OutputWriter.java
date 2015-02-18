@@ -17,6 +17,8 @@ public class OutputWriter {
 
 	public void writeText(double forwardPower, double turnPower, 
 			double armPower, double elevatorPower) {
+		System.out.println(forwardPower + "," + turnPower + "," + armPower + ","
+				+ elevatorPower);
 		//writes to variable to text file to store motions 
 		data = data.concat(forwardPower + "," + turnPower + "," + armPower + ","
 				+ elevatorPower + "\n");

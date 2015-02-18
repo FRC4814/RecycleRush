@@ -28,10 +28,10 @@ public class AutoTest extends CommandGroup {
         // arm.
     	
     	//addSequential(new DriveFor(.5, .5,20));//left power,rightpower, distance
-    	addParallel(new DriveFor(.2,20));//TODO fix this //change paramaters in DriveFor
+    	//addParallel(new DriveFor(.2,20));//TODO fix this //change paramaters in DriveFor
     	addParallel(new Interpreter());
-    	addParallel(new InputReader());
-    	addParallel(new HaloDrive());
+    	addSequential(new HaloDrive());
+    	//addSequential(new InputReader());
     	//addSequential (new SpinLeft(5)); //seconds
     }
 }

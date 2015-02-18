@@ -15,10 +15,9 @@ import edu.wpi.first.wpilibj.command.Command;
 public class InputReader extends Command {
 	
 	private Vector<String> dataStack; //used to store data read from the text file
-	private String temp; //temporary text
 	
     public InputReader() {
-        
+        requires (Robot.chassis);
     	
     }
 
@@ -31,7 +30,7 @@ public class InputReader extends Command {
     	//initializes scanner and sets to the text file
     	Scanner scanner = null;
     	try {
-			scanner = new Scanner(new FileInputStream("data.txt"));
+			scanner = new Scanner(new FileInputStream("/home/lvuser/info.txt"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -45,8 +44,9 @@ public class InputReader extends Command {
     }
 
     // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-    	temp = dataStack.remove(0);
+    protected void execute() {    	
+    	String temp = dataStack.remove(0);
+    	System.out.println(temp);
     	if(temp.isEmpty() == false){
     		String[] data = temp.split(","); 
     		double leftPower = Double.parseDouble(data[0]);
@@ -54,6 +54,7 @@ public class InputReader extends Command {
 	    	Robot.chassis.drive(leftPower, rightPower);
 	    	double armPower = Double.parseDouble(data[2]);
 	    	double elevatorPower = Double.parseDouble(data[3]);
+	    	//Robot.elevator.
 	    	
 	    	//Why?? VV
 	    	//Robot.arm.setArmPower(Double.parseDouble(temp.substring(0, temp.indexOf(','))));
@@ -68,10 +69,7 @@ public class InputReader extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	if(temp.isEmpty() == false){
-    		return true;
-    	}
-        return false;
+    	return (dataStack.isEmpty());
     }
 
     // Called once after isFinished returns true

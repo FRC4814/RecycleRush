@@ -20,6 +20,10 @@ public class Elevator extends Subsystem {
 		winchMotor = new Victor[2];
 		winchMotor[0] = new Victor(RobotMap.ELEVATOR_MOTOR[0]);
 		winchMotor[1] = new Victor(RobotMap.ELEVATOR_MOTOR[1]);
+		elevatorLimitSwitch = new DigitalInput[4];
+		for (int i = 0; i < elevatorLimitSwitch.length; i++) {
+			elevatorLimitSwitch[i] = new DigitalInput(RobotMap.ELEVATOR_PORTS[i]);
+		}
 	}
 	
     public void initDefaultCommand() {
@@ -28,8 +32,8 @@ public class Elevator extends Subsystem {
     }
     
     public void lift(double power){
-    	winchMotor[0].set(power);
-    	winchMotor[1].set(power);
+    	//winchMotor[0].set(power);
+    	//winchMotor[1].set(power);
     }
     
 	/**
@@ -54,11 +58,11 @@ public class Elevator extends Subsystem {
 	}
 
 	public int getCurrentElevatorLevel() {
-		return currentElevatorLevel;
-	}
-
-	public void setCurrentElevatorLevel(int currentElevatorLevel) {
-		this.currentElevatorLevel = currentElevatorLevel;
+		int counter = 0;
+		for (int i = 0; i < elevatorLimitSwitch.length; i++)
+			if (!elevatorLimitSwitch[i].get())
+				counter++;
+		return counter;
 	}
 }
 

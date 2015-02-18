@@ -23,9 +23,9 @@ public class OI {
     public JoystickButton playbackButton = new JoystickButton(driverRightStick, 5);
     
     // Operator controls
-    public static final int[] ELEVATOR_LEVEL = {6,7,10,11};
-    public Attack3Joystick operatorLeftStick = new Attack3Joystick(2);
-    public Attack3Joystick operatorRightStick = new Attack3Joystick(3);
+    public static final int[] ELEVATOR_BUTTONS = {6,7,10,11};
+    public static final int[] ELEVATOR_LEVEL = {0,1,2,3,4};
+    public Attack3Joystick operatorRightStick = new Attack3Joystick(2);
     public JoystickButton[] elevatorLevel = new JoystickButton[5];
     
     // There are a few additional built in buttons you can use. Additionally,
@@ -48,8 +48,8 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
     public OI() {
-    	for (int i = 0; i < elevatorLevel.length; i++) {
-			elevatorLevel[i] = new JoystickButton(operatorRightStick, ELEVATOR_LEVEL[i]);
+    	for (int i = 0; i < elevatorLevel.length-1; i++) {//creates 4 new joystick buttons for operator elevator
+			elevatorLevel[i] = new JoystickButton(operatorRightStick, ELEVATOR_BUTTONS[i]);
 		}
     }
 }

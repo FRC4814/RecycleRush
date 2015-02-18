@@ -15,8 +15,8 @@ public class DriveFor extends Command {
 	private double distance;	// Distance in Inches
 	
     //Called in autonomous
-	//public DriveFor(double leftPower, double rightPower, double distance) {//TODO fix this
-	public DriveFor(double leftPower, double distance) {
+	public DriveFor(double leftPower, double rightPower, double distance) {//TODO fix this
+	//public DriveFor(double leftPower, double distance) {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.chassis);
         this.leftPower = leftPower;		// Power for Left Motor	
@@ -42,7 +42,7 @@ public class DriveFor extends Command {
     protected boolean isFinished() {
     	// Tests to see if either encoder has reached the distance it requires
     	System.out.println(Robot.chassis.getEncoderLeft().get());
-    	if (Robot.chassis.getEncoderLeft().getDistance() >= distance) //&& Robot.chassis.getEncoderRight().getDistance() < distance) //TODO FIIXXX THISS
+    	if (Robot.chassis.getEncoderLeft().getDistance() >= distance && Robot.chassis.getEncoderRight().getDistance() > distance) //TODO FIIXXX THISS
     	{
     		return true;
 		}

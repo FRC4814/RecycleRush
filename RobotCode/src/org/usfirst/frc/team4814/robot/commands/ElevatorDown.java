@@ -5,7 +5,7 @@ import org.usfirst.frc.team4814.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ * 
  */
 public class ElevatorDown extends Command {
 
@@ -20,12 +20,10 @@ public class ElevatorDown extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.elevator.lift(-0.5);
-    	for (int i = 0; i < 5; i++) {
-    		if (Robot.elevator.getLimitSwitch(i)) {
-        		Robot.elevator.setCurrentElevatorLevel(i);
-        	}
-		}
+    	if (Robot.elevator.getCurrentElevatorLevel() == 0)
+    		Robot.elevator.lift(0);
+    	else 
+    		Robot.elevator.lift(-0.25);
     }
 
     // Make this return true when this Command no longer needs to run execute()

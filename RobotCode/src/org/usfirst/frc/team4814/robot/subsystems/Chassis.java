@@ -1,5 +1,7 @@
 package org.usfirst.frc.team4814.robot.subsystems;
 import org.usfirst.frc.team4814.robot.RobotMap;
+import org.usfirst.frc.team4814.robot.autocommands.AutoTest;
+import org.usfirst.frc.team4814.robot.autocommands.InputReader;
 import org.usfirst.frc.team4814.robot.commands.HaloDrive;
 
 import edu.wpi.first.wpilibj.CounterBase.EncodingType;
@@ -29,7 +31,7 @@ public class Chassis extends Subsystem {
     public void initDefaultCommand() {
     	
     // Set the default command for a subsystem here.
-        setDefaultCommand(new HaloDrive());
+        setDefaultCommand(new AutoTest());
     }
 
 	public void drive(double leftPower, double rightPower) { 
