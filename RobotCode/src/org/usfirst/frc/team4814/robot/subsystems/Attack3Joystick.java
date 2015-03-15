@@ -9,14 +9,14 @@ public class Attack3Joystick extends Joystick{
 	}
 	
 	public double getDeadX(){
-		if (Math.abs(getX()) < 0.15){ //if X difference more than 15% off 0, it = 0 
+		if (Math.abs(getX()) < 0.1){ //if X difference more than 15% off 0, it = 0 
 			return 0;
 		}
 		return getX();
 	}
 	
 	public double getDeadY(){ //if Y difference more than 15% off 0, it = 0 
-		if (Math.abs(getY()) < 0.15){
+		if (Math.abs(getY()) < 0.1){
 			return 0;
 		}
 		return getY();

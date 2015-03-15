@@ -20,15 +20,16 @@ public class ElevatorUp extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if (Robot.elevator.getCurrentElevatorLevel() == 2)
-    		Robot.elevator.lift(0);
-    	else
-    		Robot.elevator.lift(0.25);
+    	//if (Robot.elevator.getCurrentElevatorLevel() == 2)
+    		//Robot.elevator.lift(0);
+    	//else
+    		Robot.elevator.lift(0.4);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return !Robot.elevator.getLimitSwitch(2);
+       // return !Robot.elevator.getLimitSwitch(2);
+    	return false;
     }
 
     // Called once after isFinished returns true

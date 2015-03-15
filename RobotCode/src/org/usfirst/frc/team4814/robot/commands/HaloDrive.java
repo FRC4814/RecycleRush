@@ -28,8 +28,7 @@ public class HaloDrive extends Command {
     	
     	if (forwardPower < 0) { //switches directions when moving backwards
     		turnMod *= -1;
-    	}
-    	
+    	}    	
     	if (turnMod > 0) {    		//reduce power of opposite side by the turnMod
     		rightPower *= 1 - Math.abs(turnMod);
     	}
